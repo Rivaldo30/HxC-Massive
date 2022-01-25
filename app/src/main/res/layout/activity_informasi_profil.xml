@@ -8,7 +8,7 @@
     tools:context=".InformasiProfilActivity">
 
     <ImageView
-        android:id="@+id/imageView26"
+        android:id="@+id/infoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
@@ -26,9 +26,9 @@
         android:text="Informasi Profil"
         android:textColor="@color/black"
         android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView26"
-        app:layout_constraintStart_toEndOf="@+id/imageView26"
-        app:layout_constraintTop_toTopOf="@+id/imageView26" />
+        app:layout_constraintBottom_toBottomOf="@+id/infoBack"
+        app:layout_constraintStart_toEndOf="@+id/infoBack"
+        app:layout_constraintTop_toTopOf="@+id/infoBack" />
 
     <ImageView
         android:id="@+id/imageView27"

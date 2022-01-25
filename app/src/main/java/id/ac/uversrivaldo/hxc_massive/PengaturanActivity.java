@@ -41,7 +41,7 @@ public class PengaturanActivity extends AppCompatActivity {
         txt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                txt3.setText("Maaf, fitur ini belum tersedia");
             }
         });
 

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HxCMassive">
         <activity
+            android:name=".BahasaActivity"
+            android:exported="true" />
+        <activity
             android:name=".TentangKamiActivity"
             android:exported="true" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="true" />
         <activity
             android:name=".GenerateActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true">
@@ -39,9 +42,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".DaftarActivity"
-            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

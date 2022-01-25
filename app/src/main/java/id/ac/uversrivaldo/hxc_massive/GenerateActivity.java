@@ -3,11 +3,17 @@ package id.ac.uversrivaldo.hxc_massive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.DropBoxManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -19,7 +25,12 @@ import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class GenerateActivity extends AppCompatActivity {
+
+
 
     Dialog myDialog;
 
@@ -52,14 +63,22 @@ public class GenerateActivity extends AppCompatActivity {
         autoCompleteTextView2.setAdapter(itemAdapter2);
 
 
-        editText1 = (EditText) findViewById(R.id.editText1);
-        editText2 = (EditText) findViewById(R.id.editText2);
-        editText3 = (EditText) findViewById(R.id.editText3);
+        editText1 = findViewById(R.id.editText1);
+        editText2 = findViewById(R.id.editText2);
+        editText3 = findViewById(R.id.editText3);
 
         btnClear = findViewById(R.id.btnClear);
         btnGenerate = findViewById(R.id.btnGenerate);
 
 
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText1.getText().clear();
+                editText2.getText().clear();
+                editText3.getText().clear();
+            }
+        });
 
 
         img1 = findViewById(R.id.tujuan1);
@@ -118,15 +137,35 @@ public class GenerateActivity extends AppCompatActivity {
 
     public void ShowPopUp(View v) {
         ImageView btnClose;
-        TextView txtView;
+        TextView txtView, txtCopy;
         Button btnShare;
-
-
-
 
         String editext1Key = editText1.getText().toString();
         String editext2Key = editText2.getText().toString();
         String editext3Key = editText3.getText().toString();
+
+        editText1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(validText(editText1.getText().toString()))
+                {
+                    btnGenerate.setEnabled(true);
+                } else {
+                    btnGenerate.setEnabled(false);
+                    editText1.setText("Periksa lagi kalimat mu");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         if (editext1Key.trim().equals("")) {
             editText1.setError("Tidak boleh kosong");
@@ -143,6 +182,7 @@ public class GenerateActivity extends AppCompatActivity {
 
             btnClose = (ImageView) myDialog.findViewById(R.id.btnClose);
             btnShare = (Button) myDialog.findViewById(R.id.btnShare);
+            txtCopy = (TextView) myDialog.findViewById(R.id.txtCopy);
 
             btnShare.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -157,6 +197,17 @@ public class GenerateActivity extends AppCompatActivity {
                 }
             });
 
+            txtCopy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("TextView", txtView.getText().toString());
+                    clipboard.setPrimaryClip(clip);
+
+                    Toast.makeText(GenerateActivity.this, "Copy Berhasil", Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
             btnClose.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -168,6 +219,12 @@ public class GenerateActivity extends AppCompatActivity {
             myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             myDialog.show();
         }
+    }
+
+    boolean validText (String input) {
+        Pattern p = Pattern.compile("Saya");
+        Matcher m = p.matcher(input);
+        return m.matches();
     }
 }
 

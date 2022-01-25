@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">HxC-Massive</string>
 
+
     <string-array name="Penerima">
         <item>1</item>
         <item>2</item>
