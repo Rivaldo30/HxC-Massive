@@ -22,6 +22,9 @@
             android:name=".BahasaActivity"
             android:exported="true" />
         <activity
+            android:name=".DaftarActivity"
+            android:exported="true" />
+        <activity
             android:name=".TentangKamiActivity"
             android:exported="true" />
         <activity

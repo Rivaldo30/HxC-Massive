@@ -31,7 +31,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/btnMulai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="62dp"
@@ -49,9 +49,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:background="@drawable/arrow_right"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnMulai"
+        app:layout_constraintStart_toEndOf="@+id/btnMulai"
+        app:layout_constraintTop_toTopOf="@+id/btnMulai" />
 
     <ImageView
         android:id="@+id/arrow_left"
@@ -60,9 +60,9 @@
         android:layout_marginEnd="80dp"
         android:background="@drawable/arrow_left"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnMulai"
+        app:layout_constraintEnd_toStartOf="@+id/btnMulai"
+        app:layout_constraintTop_toTopOf="@+id/btnMulai" />
 
 
 

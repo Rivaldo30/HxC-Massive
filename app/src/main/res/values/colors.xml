@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#EDEDED</color>
     <color name="colorTransparantWhite">#009E9E9E</color>
+    <color name="colorDotTransparantWhite">#9E9E9E</color>
     <color name="colorblack">#323232</color>
     <color name="fontbrown">#606060</color>
     <color name="buttoncolor">#323232</color>

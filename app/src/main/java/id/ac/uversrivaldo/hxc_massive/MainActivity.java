@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView txt1;
 
     private ViewPager mSlideViewPager;
     private LinearLayout mDotLayout;
@@ -29,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txt1 = findViewById(R.id.btnMulai);
+
+        txt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent next = new Intent(MainActivity.this, DaftarActivity.class);
+                startActivity(next);
+            }
+        });
 
         mNextBtn = (ImageView) findViewById(R.id.arrow_right);
         mBackBtn = (ImageView) findViewById(R.id.arrow_left);
@@ -69,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             mDots[i] = new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226;"));
             mDots[i].setTextSize(55);
-            mDots[i].setTextColor(getResources().getColor(R.color.colorTransparantWhite));
+            mDots[i].setTextColor(getResources().getColor(R.color.colorDotTransparantWhite));
 
             mDotLayout.addView(mDots[i]);
 
