@@ -2,6 +2,11 @@
     <string name="app_name">HxC-Massive</string>
 
 
+    <string name="daftar">Daftar</string>
+    <string name="masuk">Masuk</string>
+    <string name="reset_kata_sandi">Reset Kata Sandi</string>
+    <string name="daftar1">Daftar1</string>
+
     <string-array name="Penerima">
         <item>1</item>
         <item>2</item>

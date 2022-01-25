@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HxCMassive">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".BahasaActivity"
             android:exported="true" />
         <activity
@@ -34,14 +43,29 @@
             android:name=".GenerateActivity"
             android:exported="true" />
         <activity
+            android:name=".daftarr"
+            android:exported="false" />
+        <activity
+            android:name=".bikinprofil"
+            android:exported="false" />
+        <activity
+            android:name=".pilihan"
+            android:exported="false" />
+        <activity
+            android:name=".Buatkatasandi"
+            android:exported="true" />
+        <activity
+            android:name=".resetkatasandi"
+            android:exported="true" />
+        <activity
+            android:name=".Masuk1"
+            android:exported="true" />
+        <activity
+            android:name=".masuk"
+            android:exported="true" />
+        <activity
             android:name=".HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
